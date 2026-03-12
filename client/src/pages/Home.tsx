@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { 
-  GraduationCap, 
   BookOpen, 
   Users, 
   Star, 
@@ -19,6 +18,7 @@ import {
   MessageSquare
 } from "lucide-react";
 import heroImage from "@/assets/images/online-tutoring.jpg";
+import logoImage from "@/assets/images/logo.png";
 
 import growth from "@assets/growth.jpg";
 
@@ -56,11 +56,8 @@ export default function Home() {
       {/* Navigation */}
       <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
         <div className="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2" onClick={() => scrollToSection('home')} role="button">
-            <div className="bg-primary p-2 rounded-lg text-white">
-              <GraduationCap className="h-6 w-6" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">Skilledge<span className="text-primary">.</span></span>
+          <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection('home')} role="button">
+            <img src={logoImage} alt="Skilledge Coaching" className="h-10 object-contain" />
           </div>
 
           {/* Desktop Nav */}
@@ -122,7 +119,7 @@ export default function Home() {
                 Now accepting new students
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 leading-[1.1]">
-                Master new skills with <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">expert coaching.</span>
+                Master new skills with <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">expert coaching.</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-600 max-w-lg leading-relaxed">
                 Skilledge provides personalized online education and mentorship to help you accelerate your career and achieve your goals.
@@ -369,10 +366,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
-              <div className="bg-primary/20 p-1.5 rounded-lg text-primary">
-                <GraduationCap className="h-5 w-5" />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-white">Skilledge<span className="text-primary">.</span></span>
+              <img src={logoImage} alt="Skilledge Coaching" className="h-8 object-contain brightness-0 invert" />
             </div>
             
             <div className="flex gap-6 text-sm">

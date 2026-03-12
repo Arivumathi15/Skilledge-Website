@@ -20,6 +20,8 @@ import {
 } from "lucide-react";
 import heroImage from "@/assets/images/online-tutoring.jpg";
 
+import growth from "@assets/growth.jpg";
+
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { toast } = useToast();
@@ -106,7 +108,6 @@ export default function Home() {
           </div>
         )}
       </header>
-
       <main className="flex-1">
         {/* Hero Section */}
         <section id="home" className="relative pt-24 pb-32 md:pt-36 md:pb-40 overflow-hidden">
@@ -140,7 +141,7 @@ export default function Home() {
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-indigo-50 rounded-[2rem] transform rotate-3 -z-10"></div>
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] border bg-white">
                 <img 
-                  src={heroImage} 
+                  src={growth} 
                   alt="Professional coach smiling" 
                   className="w-full h-full object-cover"
                 />
@@ -363,7 +364,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
       {/* Footer */}
       <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
         <div className="container mx-auto px-4 md:px-6">

@@ -18,7 +18,7 @@ import {
   Video,
   MessageSquare
 } from "lucide-react";
-import heroImage from "@/assets/images/hero-coach.jpg";
+import heroImage from "@/assets/images/online-tutoring.jpg";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

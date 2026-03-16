@@ -168,17 +168,12 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {[
                 {
                   icon: <Users className="h-6 w-6" />,
                   title: "Personalized Mentorship",
                   description: "Get direct 1-on-1 feedback and guidance tailored to your specific career path and goals."
-                },
-                {
-                  icon: <BookOpen className="h-6 w-6" />,
-                  title: "Practical Curriculum",
-                  description: "Learn through real-world projects and case studies, not just theory. Build a portfolio that stands out."
                 },
                 {
                   icon: <Star className="h-6 w-6" />,

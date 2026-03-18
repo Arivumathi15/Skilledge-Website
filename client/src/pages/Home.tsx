@@ -341,7 +341,7 @@ export default function Home() {
         <section id="testimonials" className="py-24 bg-slate-900 text-white">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Success Stories</h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
                   quote: "I’m proud to share that I’ve successfully completed the Master Python Course. The course provided a strong foundation in Python, covering everything from basic to advanced concepts, with a focus on hands-on practice, quizzes, assignments, and projects. A heartfelt thank you to SkillEdge Coaching and my trainer, Arivumathi Mam, for their complete guidance and support.",
@@ -357,6 +357,11 @@ export default function Home() {
                   quote: "First of all thank you so much Akka... Python class was very useful for me and you are teaching is very well and I am zero knowledge about the python but eppo python pathiii basic knowledge erruku this is useful for my career. Akka neega romma dedicated person.then enna doubt kettalum help pannuvigaa. Miss your class akka... Thank you so much..@SkillEdge Coaching ❤️",
                   author: "Pavithra",
                   role: "B.Sc., Final year"
+                },
+                {
+                  quote: "I'm writing to express my sincere appreciation for the recent machine learning class. It was truly insightful. What stood out the most for me was the hands-on project. Getting to apply the concepts directly to a practical problem was incredibly valuable. Thank you again for your dedication and for making the learning experience so engaging and effective.",
+                  author: "Srihari",
+                  role: "Working professional"
                 }
               ].map((testimonial, i) => (
                 <div key={i} className="bg-slate-800 p-8 rounded-2xl">

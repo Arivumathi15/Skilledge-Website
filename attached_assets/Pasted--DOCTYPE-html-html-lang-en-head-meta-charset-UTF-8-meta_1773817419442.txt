@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Master Machine Learning Course — SkillEdge Coaching</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --blue-50:#E6F1FB;--blue-100:#B5D4F4;--blue-200:#85B7EB;
+  --blue-400:#378ADD;--blue-600:#185FA5;--blue-800:#0C447C;--blue-900:#042C53;
+  --navy:#0A1628;--navy-light:#0F1E35;--navy-mid:#162236;
+  --text:#0A1628;--text-muted:#5A6A7A;--text-light:#8A9AAA;
+  --border:#E2EAF2;--bg:#F5F8FC;--white:#FFFFFF;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(245,248,252,0.93);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  padding:0 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  height:60px;
+}
+.nav-brand{
+  font-family:'DM Serif Display',serif;
+  font-size:20px;color:var(--navy);
+  text-decoration:none;display:flex;align-items:center;gap:6px;
+}
+.nav-brand span{color:var(--blue-400);}
+.nav-links{display:flex;align-items:center;gap:1.5rem;}
+.nav-links a{font-size:14px;color:var(--text-muted);text-decoration:none;transition:color .15s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{
+  background:var(--blue-600);color:#fff;
+  font-size:14px;font-weight:500;
+  padding:8px 18px;border-radius:8px;
+  text-decoration:none;transition:background .15s,transform .12s;
+  display:inline-block;
+}
+.nav-cta:hover{background:var(--blue-800);transform:translateY(-1px);}
+
+/* ── HERO ── */
+.hero{
+  background:var(--navy);
+  padding:5rem 2rem 0;
+  position:relative;overflow:hidden;
+}
+.hero-geo{
+  position:absolute;right:-100px;top:-100px;
+  width:500px;height:500px;
+  border-radius:50%;
+  border:1px solid rgba(55,138,221,0.08);
+  pointer-events:none;
+}
+.hero-geo2{
+  position:absolute;right:-40px;top:-40px;
+  width:320px;height:320px;
+  border-radius:50%;
+  border:1px solid rgba(55,138,221,0.12);
+  pointer-events:none;
+}
+.hero-geo3{
+  position:absolute;left:-80px;bottom:-80px;
+  width:300px;height:300px;
+  border-radius:50%;
+  background:rgba(55,138,221,0.04);
+  pointer-events:none;
+}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(55,138,221,0.12);
+  border:1px solid rgba(55,138,221,0.3);
+  color:#85B7EB;
+  font-size:12px;font-weight:500;letter-spacing:0.06em;
+  padding:5px 14px;border-radius:20px;margin-bottom:1.5rem;
+}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#378ADD;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero-eyebrow{font-size:13px;color:#85B7EB;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;}
+.hero h1{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(36px,6vw,60px);
+  color:#fff;line-height:1.08;margin-bottom:1.25rem;
+}
+.hero h1 em{color:#85B7EB;font-style:italic;}
+.hero-desc{font-size:17px;color:rgba(255,255,255,0.6);max-width:580px;margin-bottom:2.5rem;line-height:1.75;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:3rem;}
+.btn-primary{
+  background:var(--blue-400);color:#fff;
+  font-size:15px;font-weight:500;
+  padding:13px 28px;border-radius:10px;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:background .15s,transform .12s;display:inline-block;
+}
+.btn-primary:hover{background:var(--blue-600);transform:translateY(-2px);}
+.btn-ghost{
+  background:transparent;color:rgba(255,255,255,0.7);
+  font-size:15px;
+  padding:13px 24px;border-radius:10px;
+  text-decoration:none;border:1px solid rgba(255,255,255,0.18);
+  cursor:pointer;transition:all .15s;display:inline-block;
+}
+.btn-ghost:hover{background:rgba(255,255,255,0.07);color:#fff;}
+
+/* Hero phases strip */
+.hero-phases{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,0.08);
+  margin-top:0;
+}
+.phase-tile{
+  padding:1.4rem 1.25rem;
+  border-right:1px solid rgba(255,255,255,0.08);
+  position:relative;
+}
+.phase-tile:last-child{border-right:none;}
+.phase-num{
+  font-size:10px;letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(255,255,255,0.3);margin-bottom:5px;
+}
+.phase-name{font-size:14px;font-weight:500;color:#fff;margin-bottom:3px;}
+.phase-modules{font-size:12px;color:rgba(255,255,255,0.4);}
+.phase-bar{
+  position:absolute;top:0;left:0;right:0;height:2px;
+}
+.bar-1{background:var(--blue-200);}
+.bar-2{background:var(--blue-400);}
+.bar-3{background:var(--blue-600);}
+.bar-4{background:var(--blue-800);}
+@media(max-width:600px){
+  .hero-phases{grid-template-columns:repeat(2,1fr);}
+  .phase-tile:nth-child(2){border-right:none;}
+  .phase-tile:nth-child(3){border-top:1px solid rgba(255,255,255,0.08);}
+  .phase-tile:nth-child(4){border-top:1px solid rgba(255,255,255,0.08);border-right:none;}
+}
+
+/* ── SECTIONS ── */
+section{padding:4rem 2rem;}
+.section-inner{max-width:900px;margin:0 auto;}
+.section-label{
+  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--blue-400);font-weight:500;margin-bottom:0.5rem;
+}
+.section-title{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(26px,4vw,36px);color:var(--text);
+  margin-bottom:0.75rem;line-height:1.2;
+}
+.section-sub{font-size:16px;color:var(--text-muted);max-width:560px;line-height:1.75;margin-bottom:2.5rem;}
+
+/* ── STATS ROW ── */
+.stats-row{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:1px;background:var(--border);
+  border:1px solid var(--border);border-radius:14px;overflow:hidden;
+  margin-bottom:3rem;
+}
+.stat-box{
+  background:var(--white);padding:1.25rem 1rem;text-align:center;
+}
+.stat-val{
+  font-family:'DM Serif Display',serif;
+  font-size:28px;color:var(--blue-800);margin-bottom:4px;
+}
+.stat-key{font-size:12px;color:var(--text-muted);}
+
+/* ── WHY ── */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;}
+.why-card{
+  background:var(--white);border:1px solid var(--border);border-radius:14px;
+  padding:1.5rem;transition:border-color .15s,transform .15s;position:relative;overflow:hidden;
+}
+.why-card:hover{border-color:var(--blue-200);transform:translateY(-2px);}
+.why-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--blue-400),var(--blue-100));
+  border-radius:0 0 14px 14px;
+}
+.why-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:var(--blue-50);
+  display:flex;align-items:center;justify-content:center;margin-bottom:1rem;
+}
+.why-title{font-size:15px;font-weight:500;margin-bottom:6px;}
+.why-desc{font-size:13px;color:var(--text-muted);line-height:1.6;}
+
+/* ── PHASES / CURRICULUM ── */
+.curriculum-bg{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+
+.phase-header{
+  display:flex;align-items:center;gap:12px;
+  padding:1.25rem 0 0.75rem;
+  border-bottom:1px solid var(--border);margin-bottom:1rem;
+}
+.phase-badge{
+  font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;
+  padding:4px 12px;border-radius:20px;
+}
+.ph-1{background:#E6F1FB;color:#0C447C;border:1px solid #B5D4F4;}
+.ph-2{background:#EAF3DE;color:#27500A;border:1px solid #C0DD97;}
+.ph-3{background:#FEF3C7;color:#78350F;border:1px solid #FCD34D;}
+.ph-4{background:#EDE9FE;color:#4C1D95;border:1px solid #C4B5FD;}
+.phase-title-text{font-family:'DM Serif Display',serif;font-size:20px;color:var(--text);}
+.phase-desc{font-size:13px;color:var(--text-muted);margin-left:auto;}
+
+.module-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border-radius:14px;overflow:hidden;border:1px solid var(--border);margin-bottom:2rem;}
+.module-item{background:var(--white);}
+.module-header{
+  display:flex;align-items:center;gap:12px;
+  padding:1rem 1.25rem;cursor:pointer;
+  transition:background .12s;user-select:none;
+}
+.module-header:hover{background:var(--bg);}
+.module-num{
+  width:30px;height:30px;border-radius:8px;
+  background:var(--blue-50);color:var(--blue-600);
+  font-size:12px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.module-name{flex:1;font-size:15px;font-weight:500;color:var(--text);}
+.module-duration{
+  font-size:11px;color:var(--text-light);
+  background:var(--bg);border:1px solid var(--border);
+  padding:2px 8px;border-radius:20px;margin-right:8px;white-space:nowrap;
+}
+.module-chevron{width:18px;height:18px;color:var(--text-light);transition:transform .2s;flex-shrink:0;}
+.module-item.open .module-chevron{transform:rotate(180deg);}
+.module-body{display:none;padding:0 1.25rem 1.25rem 4.25rem;}
+.module-item.open .module-body{display:block;}
+.topic-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:10px;}
+.topic-list li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--text-muted);line-height:1.5;}
+.topic-dot{width:5px;height:5px;border-radius:50%;background:var(--blue-400);flex-shrink:0;margin-top:7px;}
+.module-footer{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.tag{
+  font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;
+  background:var(--blue-50);color:var(--blue-800);border:1px solid var(--blue-100);
+  display:inline-block;
+}
+.tag-project{background:#FEF3C7;color:#78350F;border-color:#FCD34D;}
+.tag-hot{background:#FEE2E2;color:#7F1D1D;border-color:#FCA5A5;}
+
+/* ── TOOLS GRID ── */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;}
+.tool-pill{
+  background:var(--white);border:1px solid var(--border);border-radius:10px;
+  padding:0.9rem 1rem;display:flex;align-items:center;gap:10px;
+  transition:border-color .15s,transform .12s;
+}
+.tool-pill:hover{border-color:var(--blue-200);transform:translateY(-1px);}
+.tool-dot{width:8px;height:8px;border-radius:50%;background:var(--blue-400);flex-shrink:0;}
+.tool-name{font-size:13px;font-weight:500;color:var(--text);}
+
+/* ── TIMELINE ── */
+.timeline{display:flex;flex-direction:column;gap:0;}
+.tl-item{display:grid;grid-template-columns:120px 1fr;gap:0;position:relative;}
+.tl-item::before{
+  content:'';position:absolute;left:119px;top:24px;bottom:-1px;
+  width:1px;background:var(--border);z-index:0;
+}
+.tl-item:last-child::before{display:none;}
+.tl-week{
+  padding:1rem 1.5rem 1rem 0;
+  font-size:12px;color:var(--text-light);font-weight:500;
+  text-align:right;padding-top:1.1rem;
+}
+.tl-content{
+  padding:0.75rem 0 1.5rem 1.5rem;
+  border-left:1px solid var(--border);position:relative;
+}
+.tl-dot{
+  position:absolute;left:-5px;top:1.1rem;
+  width:9px;height:9px;border-radius:50%;
+  background:var(--blue-400);border:2px solid var(--white);
+  z-index:1;
+}
+.tl-label{font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px;}
+.tl-modules{font-size:13px;color:var(--text-muted);}
+
+/* ── PRICING ── */
+.pricing-wrap{
+  background:var(--navy);border-radius:20px;overflow:hidden;
+}
+.pricing-top{
+  padding:2.5rem 2.5rem 2rem;
+  display:grid;grid-template-columns:1fr auto;gap:2.5rem;align-items:start;
+}
+@media(max-width:620px){.pricing-top{grid-template-columns:1fr;}}
+.pricing-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.pricing-list li{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.65);}
+.chk{color:#85B7EB;font-size:14px;flex-shrink:0;}
+.price-block{text-align:right;flex-shrink:0;}
+@media(max-width:620px){.price-block{text-align:left;}}
+.price-was{font-size:15px;color:rgba(255,255,255,0.3);text-decoration:line-through;margin-bottom:4px;}
+.price-now{font-family:'DM Serif Display',serif;font-size:52px;color:#fff;line-height:1;}
+.price-label{font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:1rem;}
+.price-offer-tag{
+  display:inline-block;
+  background:rgba(55,138,221,0.2);border:1px solid rgba(55,138,221,0.35);
+  color:#85B7EB;font-size:11px;font-weight:500;letter-spacing:0.06em;
+  padding:4px 12px;border-radius:20px;margin-bottom:1rem;
+}
+.pricing-bottom{
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding:1.5rem 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+}
+.installment-info{font-size:13px;color:rgba(255,255,255,0.45);}
+.installment-info strong{color:rgba(255,255,255,0.7);}
+
+/* ── ENROLL ── */
+.enroll{
+  background:var(--blue-50);
+  border-top:1px solid var(--blue-100);border-bottom:1px solid var(--blue-100);
+  padding:4rem 2rem;text-align:center;
+}
+.enroll h2{font-family:'DM Serif Display',serif;font-size:34px;color:var(--blue-900);margin-bottom:0.75rem;}
+.enroll p{font-size:16px;color:var(--blue-600);margin-bottom:2rem;}
+.enroll-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-enroll{
+  background:var(--blue-600);color:#fff;
+  font-size:15px;font-weight:500;
+  padding:14px 32px;border-radius:10px;
+  text-decoration:none;transition:background .15s,transform .12s;display:inline-block;
+}
+.btn-enroll:hover{background:var(--blue-800);transform:translateY(-2px);}
+.btn-enroll-ghost{
+  background:transparent;color:var(--blue-800);
+  font-size:15px;
+  padding:14px 28px;border-radius:10px;
+  text-decoration:none;border:1px solid var(--blue-200);
+  transition:all .15s;display:inline-block;
+}
+.btn-enroll-ghost:hover{background:var(--blue-100);}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:2rem;text-align:center;}
+footer p{font-size:13px;color:rgba(255,255,255,0.28);}
+footer a{color:rgba(255,255,255,0.45);text-decoration:none;}
+
+/* ── ANIMATIONS ── */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">Skill<span>Edge</span></a>
+  <div class="nav-links">
+    <a href="#">Courses</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a class="nav-cta" href="#enroll">Enroll now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-geo"></div>
+  <div class="hero-geo2"></div>
+  <div class="hero-geo3"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Enrolling now · April 10, 2025
+    </div>
+    <p class="hero-eyebrow">Master Machine Learning Program</p>
+    <h1>ML that you<br>actually <em>deploy.</em></h1>
+    <p class="hero-desc">A 1-on-1 industry-focused program. Algorithms, real projects, FastAPI, Docker, and a live ML application on your GitHub — not just theory.</p>
+    <div class="hero-actions">
+      <a href="#enroll" class="btn-primary">Enroll for ₹14,999 →</a>
+      <a href="#curriculum" class="btn-ghost">Explore curriculum</a>
+    </div>
+    <div class="hero-phases">
+      <div class="phase-tile">
+        <div class="phase-bar bar-1"></div>
+        <div class="phase-num">Phase 01</div>
+        <div class="phase-name">Foundation</div>
+        <div class="phase-modules">3 modules</div>
+      </div>
+      <div class="phase-tile">
+        <div class="phase-bar bar-2"></div>
+        <div class="phase-num">Phase 02</div>
+        <div class="phase-name">Core ML</div>
+        <div class="phase-modules">6 modules</div>
+      </div>
+      <div class="phase-tile">
+        <div class="phase-bar bar-3"></div>
+        <div class="phase-num">Phase 03</div>
+        <div class="phase-name">Real-World Skills</div>
+        <div class="phase-modules">5 modules</div>
+      </div>
+      <div class="phase-tile">
+        <div class="phase-bar bar-4"></div>
+        <div class="phase-num">Phase 04</div>
+        <div class="phase-name">Capstone</div>
+        <div class="phase-modules">1 end-to-end project</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding:3rem 2rem;">
+  <div class="section-inner fade-in">
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-val">15</div><div class="stat-key">Modules</div></div>
+      <div class="stat-box"><div class="stat-val">4</div><div class="stat-key">Phases</div></div>
+      <div class="stat-box"><div class="stat-val">41</div><div class="stat-key">Live sessions</div></div>
+      <div class="stat-box"><div class="stat-val">8–10</div><div class="stat-key">Weeks</div></div>
+      <div class="stat-box"><div class="stat-val">1-on-1</div><div class="stat-key">Personal coaching</div></div>
+      <div class="stat-box"><div class="stat-val">Live</div><div class="stat-key">GitHub project</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section style="padding-top:0;">
+  <div class="section-inner fade-in">
+    <p class="section-label">Why this program</p>
+    <h2 class="section-title">Built for the industry, not the classroom.</h2>
+    <p class="section-sub">Most ML courses stop at theory. This one keeps going — until your model is deployed, your API is live, and your project is on GitHub.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#185FA5" stroke-width="1.5"/><circle cx="9" cy="7" r="4" stroke="#185FA5" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#378ADD" stroke-width="1.5"/></svg>
+        </div>
+        <div class="why-title">Truly 1-on-1</div>
+        <div class="why-desc">No batches, no waiting. Every session is live with your instructor, paced entirely around you.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#185FA5" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#378ADD" stroke-width="1.5"/></svg>
+        </div>
+        <div class="why-title">You deploy it</div>
+        <div class="why-desc">FastAPI, Streamlit, Docker — the tools companies actually use. You'll leave with a live deployed app.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="#185FA5" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="why-title">Beyond theory</div>
+        <div class="why-desc">Web scraping, Git, Docker — skills most ₹50,000 courses skip entirely. Baked right into the curriculum.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke="#185FA5" stroke-width="1.5"/><polyline points="22 4 12 14.01 9 11.01" stroke="#378ADD" stroke-width="1.5"/></svg>
+        </div>
+        <div class="why-title">Real projects</div>
+        <div class="why-desc">House price prediction, fraud detection, customer segmentation — every module builds something real.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="curriculum-bg" id="curriculum">
+  <div class="section-inner fade-in">
+    <p class="section-label">Full curriculum</p>
+    <h2 class="section-title">15 modules. 4 phases.</h2>
+    <p class="section-sub">Everything is sequenced intentionally — foundations first, deployment last, with real projects at every stage.</p>
+
+    <!-- PHASE 1 -->
+    <div class="phase-header">
+      <span class="phase-badge ph-1">Phase 1</span>
+      <span class="phase-title-text">Foundation</span>
+      <span class="phase-desc">3 modules · ~7 days</span>
+    </div>
+    <div class="module-list">
+      <div class="module-item open">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">01</div>
+          <div class="module-name">Python for Machine Learning</div>
+          <span class="module-duration">2–3 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>Python recap — only the parts you need for ML</li>
+            <li><span class="topic-dot"></span>NumPy — arrays, operations & indexing</li>
+            <li><span class="topic-dot"></span>Pandas — DataFrames, series & data handling</li>
+            <li><span class="topic-dot"></span>Data cleaning basics & handling missing values</li>
+            <li><span class="topic-dot"></span>Basic visualization — Matplotlib & Seaborn</li>
+          </ul>
+          <div class="module-footer"><span class="tag-project tag">Practice: Student dataset analysis</span></div>
+        </div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">02</div>
+          <div class="module-name">Data Preprocessing & Feature Engineering</div>
+          <span class="module-duration">3–4 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>Types of data & missing value techniques</li>
+            <li><span class="topic-dot"></span>Outlier detection & handling</li>
+            <li><span class="topic-dot"></span>Label encoding & one hot encoding</li>
+            <li><span class="topic-dot"></span>Standardization & normalization</li>
+            <li><span class="topic-dot"></span>Feature selection, train-test split & data leakage</li>
+          </ul>
+          <div class="module-footer"><span class="tag-project tag">Mini Project: Customer dataset preprocessing pipeline</span><span class="tag tag-hot">Most important module</span></div>
+        </div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">03</div>
+          <div class="module-name">Math for ML (Simplified)</div>
+          <span class="module-duration">2 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>Vectors & matrices — visual approach, no heavy formulas</li>
+            <li><span class="topic-dot"></span>Gradient descent — step-by-step intuition</li>
+            <li><span class="topic-dot"></span>Cost function concept</li>
+            <li><span class="topic-dot"></span>Probability basics & normal distribution</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="phase-header">
+      <span class="phase-badge ph-2">Phase 2</span>
+      <span class="phase-title-text">Core Machine Learning</span>
+      <span class="phase-desc">6 modules · ~18 days</span>
+    </div>
+    <div class="module-list">
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">04</div>
+          <div class="module-name">ML Fundamentals</div>
+          <span class="module-duration">2 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>What is Machine Learning — types: supervised & unsupervised</li>
+            <li><span class="topic-dot"></span>Features vs target, training vs testing</li>
+            <li><span class="topic-dot"></span>Overfitting vs underfitting & bias-variance tradeoff</li>
+            <li><span class="topic-dot"></span>Cross-validation</li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">05</div>
+          <div class="module-name">Regression Algorithms</div>
+          <span class="module-duration">4 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>Linear regression & multiple linear regression</li>
+            <li><span class="topic-dot"></span>Polynomial regression</li>
+            <li><span class="topic-dot"></span>Ridge & Lasso regression</li>
+            <li><span class="topic-dot"></span>Residuals, model fitting & regularization</li>
+          </ul>
+          <div class="module-footer"><span class="tag-project tag">Project: House Price Prediction</span></div>
+        </div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">06</div>
+          <div class="module-name">Classification Algorithms</div>
+          <span class="module-duration">4 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>Logistic regression — sigmoid function & decision boundary</li>
+            <li><span class="topic-dot"></span>K-Nearest Neighbours (KNN)</li>
+            <li><span class="topic-dot"></span>Naive Bayes</li>
+            <li><span class="topic-dot"></span>Support Vector Machine — intuition</li>
+          </ul>
+          <div class="module-footer"><span class="tag-project tag">Project: Spam Email Detection</span></div>
+        </div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">07</div>
+          <div class="module-name">Tree-Based Models</div>
+          <span class="module-duration">3 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>Decision Tree — entropy & information gain</li>
+            <li><span class="topic-dot"></span>Random Forest & feature importance</li>
+            <li><span class="topic-dot"></span>Gradient Boosting</li>
+            <li><span class="topic-dot"></span>XGBoost — introductory level</li>
+          </ul>
+          <div class="module-footer"><span class="tag-project tag">Project: Loan Approval Prediction</span><span class="tag tag-hot">Industry favourite</span></div>
+        </div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">08</div>
+          <div class="module-name">Unsupervised Learning</div>
+          <span class="module-duration">3 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>K-Means Clustering & the elbow method</li>
+            <li><span class="topic-dot"></span>Hierarchical Clustering</li>
+            <li><span class="topic-dot"></span>DBSCAN — fundamentals</li>
+            <li><span class="topic-dot"></span>PCA — dimensionality reduction</li>
+          </ul>
+          <div class="module-footer"><span class="tag-project tag">Project: Customer Segmentation</span></div>
+        </div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">09</div>
+          <div class="module-name">Model Evaluation & Hyperparameter Tuning</div>
+          <span class="module-duration">2 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>Accuracy, precision, recall, F1-score & confusion matrix</li>
+            <li><span class="topic-dot"></span>ROC-AUC curve</li>
+            <li><span class="topic-dot"></span>Cross-validation techniques</li>
+            <li><span class="topic-dot"></span>GridSearchCV & RandomizedSearchCV</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="phase-header">
+      <span class="phase-badge ph-3">Phase 3</span>
+      <span class="phase-title-text">Real-World Skills</span>
+      <span class="phase-desc">5 modules · ~10 days</span>
+    </div>
+    <div class="module-list">
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">10</div>
+          <div class="module-name">Web Scraping</div>
+          <span class="module-duration">1–2 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>What is web scraping & when to use it</li>
+            <li><span class="topic-dot"></span>Using requests & BeautifulSoup</li>
+            <li><span class="topic-dot"></span>Extracting real-world data & cleaning scraped data</li>
+          </ul>
+          <div class="module-footer"><span class="tag-project tag">Mini Project: Scrape product/job data to CSV</span></div>
+        </div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">11</div>
+          <div class="module-name">Git & Version Control</div>
+          <span class="module-duration">1 day</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>Git basics — init, add, commit, push, pull</li>
+            <li><span class="topic-dot"></span>GitHub usage & managing ML projects with Git</li>
+          </ul>
+        </div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">12</div>
+          <div class="module-name">Model Deployment with FastAPI</div>
+          <span class="module-duration">4 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>Model saving — Pickle & Joblib</li>
+            <li><span class="topic-dot"></span>Flask — simple API creation</li>
+            <li><span class="topic-dot"></span>FastAPI — why it's the industry standard</li>
+            <li><span class="topic-dot"></span>Building ML APIs with FastAPI & request/response handling</li>
+          </ul>
+          <div class="module-footer"><span class="tag tag-hot">Core industry skill</span></div>
+        </div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">13</div>
+          <div class="module-name">ML UI Development</div>
+          <span class="module-duration">2 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>Streamlit — build quick ML apps</li>
+            <li><span class="topic-dot"></span>Gradio — interactive ML interfaces</li>
+          </ul>
+          <div class="module-footer"><span class="tag-project tag">Mini Project: Working ML prediction UI</span></div>
+        </div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">14</div>
+          <div class="module-name">Docker Basics</div>
+          <span class="module-duration">2 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>What is Docker & why it matters in ML</li>
+            <li><span class="topic-dot"></span>Docker architecture basics</li>
+            <li><span class="topic-dot"></span>Writing a Dockerfile & containerizing an ML app</li>
+            <li><span class="topic-dot"></span>Running & testing containers locally</li>
+          </ul>
+          <div class="module-footer"><span class="tag tag-hot">Makes your profile stand out</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="phase-header">
+      <span class="phase-badge ph-4">Phase 4</span>
+      <span class="phase-title-text">Capstone Project</span>
+      <span class="phase-desc">1 end-to-end project · 5–6 days</span>
+    </div>
+    <div class="module-list">
+      <div class="module-item open">
+        <div class="module-header" onclick="toggle(this)">
+          <div class="module-num">15</div>
+          <div class="module-name">End-to-End ML System</div>
+          <span class="module-duration">5–6 days</span>
+          <svg class="module-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="module-body">
+          <ul class="topic-list">
+            <li><span class="topic-dot"></span>Data collection — web scraping optional</li>
+            <li><span class="topic-dot"></span>Data preprocessing & feature engineering</li>
+            <li><span class="topic-dot"></span>Model building & selection</li>
+            <li><span class="topic-dot"></span>Model evaluation & hyperparameter tuning</li>
+            <li><span class="topic-dot"></span>FastAPI backend creation</li>
+            <li><span class="topic-dot"></span>Streamlit or Gradio UI integration</li>
+            <li><span class="topic-dot"></span>Docker containerization & GitHub upload</li>
+          </ul>
+          <div class="module-footer">
+            <span class="tag-project tag">Student Performance Prediction</span>
+            <span class="tag-project tag">Fraud Detection</span>
+            <span class="tag-project tag">Sales Forecasting</span>
+            <span class="tag-project tag">Recommendation System</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section>
+  <div class="section-inner fade-in">
+    <p class="section-label">Tools you'll master</p>
+    <h2 class="section-title">The actual industry stack.</h2>
+    <p class="section-sub">Not toys — the real tools used by ML engineers and data scientists at companies today.</p>
+    <div class="tools-grid">
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">Python</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">NumPy</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">Pandas</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">Scikit-learn</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">XGBoost</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">Matplotlib</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">Seaborn</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">FastAPI</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">Flask</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">Streamlit</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">Gradio</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">Docker</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">Git & GitHub</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">BeautifulSoup</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">Pickle & Joblib</span></div>
+      <div class="tool-pill"><span class="tool-dot"></span><span class="tool-name">Jupyter Notebook</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section-inner fade-in">
+    <p class="section-label">Week by week</p>
+    <h2 class="section-title">Your 8–10 week journey.</h2>
+    <p class="section-sub">A flexible roadmap — paced around you. Sessions are Mon / Wed / Fri at 8:00 PM.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-week">Weeks 1–2</div>
+        <div class="tl-content">
+          <div class="tl-dot"></div>
+          <div class="tl-label">Foundation</div>
+          <div class="tl-modules">Python for ML · Data Preprocessing · Math for ML</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-week">Weeks 3–4</div>
+        <div class="tl-content">
+          <div class="tl-dot"></div>
+          <div class="tl-label">Supervised Learning</div>
+          <div class="tl-modules">ML Fundamentals · Regression · Classification</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-week">Weeks 5–6</div>
+        <div class="tl-content">
+          <div class="tl-dot"></div>
+          <div class="tl-label">Advanced ML</div>
+          <div class="tl-modules">Tree-Based Models · Unsupervised Learning · Model Evaluation</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-week">Weeks 7–8</div>
+        <div class="tl-content">
+          <div class="tl-dot"></div>
+          <div class="tl-label">Real-World Skills</div>
+          <div class="tl-modules">Web Scraping · Git · FastAPI · Streamlit · Docker</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-week">Weeks 9–10</div>
+        <div class="tl-content">
+          <div class="tl-dot"></div>
+          <div class="tl-label">Capstone Project</div>
+          <div class="tl-modules">End-to-end ML system — built, deployed & on GitHub</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div class="section-inner fade-in">
+    <p class="section-label">Investment</p>
+    <h2 class="section-title">One price, everything included.</h2>
+    <p class="section-sub" style="margin-bottom:2rem;">No hidden fees. No upsells. Just the full program, personalised for you.</p>
+    <div class="pricing-wrap">
+      <div class="pricing-top">
+        <div>
+          <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:0.5rem;">Master ML Program — what's included</div>
+          <ul class="pricing-list">
+            <li><span class="chk">✓</span>All 15 modules across 4 phases</li>
+            <li><span class="chk">✓</span>41 live 1-on-1 sessions with your instructor</li>
+            <li><span class="chk">✓</span>Real projects at every phase — 5 total</li>
+            <li><span class="chk">✓</span>End-to-end capstone — deployed & on GitHub</li>
+            <li><span class="chk">✓</span>FastAPI, Streamlit, Docker & Git included</li>
+            <li><span class="chk">✓</span>WhatsApp doubt support between sessions</li>
+            <li><span class="chk">✓</span>Flexible 3-instalment payment option</li>
+          </ul>
+        </div>
+        <div class="price-block">
+          <div class="price-was">₹18,000</div>
+          <div class="price-now">₹14,999</div>
+          <div class="price-label">one-time payment</div>
+          <div class="price-offer-tag">Limited offer</div>
+          <br/>
+          <a href="#enroll" class="btn-primary" style="display:block;text-align:center;white-space:nowrap;">Enroll now →</a>
+        </div>
+      </div>
+      <div class="pricing-bottom">
+        <div class="installment-info">Prefer to pay in parts? Choose the <strong>3-instalment plan — ₹4,999 × 3</strong> at no extra cost.</div>
+        <a href="#enroll" style="font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;white-space:nowrap;">Ask about instalments →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENROLL -->
+<section class="enroll" id="enroll">
+  <div class="section-inner fade-in">
+    <h2>Start your ML journey today.</h2>
+    <p>Seats are very limited — this is a personal coaching program. Reach out to secure yours.</p>
+    <div class="enroll-btns">
+      <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" class="btn-enroll">WhatsApp us to enroll</a>
+      <a href="mailto:YOUR_EMAIL" class="btn-enroll-ghost">Send an email</a>
+    </div>
+    <p style="margin-top:1.5rem;font-size:13px;color:var(--blue-600);">Classes start April 10, 2025 · Mon / Wed / Fri · 8:00 PM · Online</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 SkillEdge Coaching · <a href="#">Privacy</a> · <a href="#">Courses</a> · Built with care for every student.</p>
+</footer>
+
+<script>
+function toggle(header){
+  header.parentElement.classList.toggle('open');
+}
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

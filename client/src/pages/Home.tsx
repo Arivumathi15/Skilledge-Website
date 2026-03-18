@@ -176,37 +176,42 @@ export default function Home() {
         <section id="about" className="py-24 bg-slate-50">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Why choose Skilledge?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">SkillEdge vs other courses comparison</h2>
               <p className="text-lg text-slate-600">
-                We believe in practical, actionable education that bridges the gap between where you are and where you want to be.
+                Side-by-side table showing what SkillEdge offers that YouTube, Udemy, and bootcamps don't. Directly answers "why pay for this?"
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {[
-                {
-                  icon: <Users className="h-6 w-6" />,
-                  title: "Personalized Mentorship",
-                  description: "Get direct 1-on-1 feedback and guidance tailored to your specific career path and goals."
-                },
-                {
-                  icon: <Star className="h-6 w-6" />,
-                  title: "Proven Results",
-                  description: "Join hundreds of students who have successfully transitioned into new roles and leveled up their careers."
-                }
-              ].map((feature, i) => (
-                <Card key={i} className="border-none shadow-sm hover:shadow-md transition-shadow bg-white">
-                  <CardContent className="p-8 space-y-4">
-                    <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center text-primary">
-                      {feature.icon}
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-[#f5f5f0] rounded-xl overflow-hidden border border-[#eaeaea]">
+                <div className="grid grid-cols-[1fr_120px_120px] md:grid-cols-[1fr_200px_200px] border-b border-[#eaeaea] p-4 md:p-6 bg-[#f5f5f0]">
+                  <div className="font-medium text-slate-600">Feature</div>
+                  <div className="font-medium text-blue-600 text-center">SkillEdge</div>
+                  <div className="font-medium text-slate-600 text-center">Others</div>
+                </div>
+                
+                {[
+                  { feature: "1-on-1 live sessions" },
+                  { feature: "Deployment training" },
+                  { feature: "Your pace, your schedule" },
+                  { feature: "GitHub project on completion" }
+                ].map((item, i) => (
+                  <div key={i} className="grid grid-cols-[1fr_120px_120px] md:grid-cols-[1fr_200px_200px] border-b border-[#eaeaea] last:border-0 p-4 md:p-6 hover:bg-[#f0f0ea] transition-colors">
+                    <div className="text-slate-800">{item.feature}</div>
+                    <div className="flex justify-center text-green-600">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900">{feature.title}</h3>
-                    <p className="text-slate-600 leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+                    <div className="flex justify-center text-slate-400">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

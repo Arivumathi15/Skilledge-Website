@@ -13,6 +13,7 @@ import {
   Menu, 
   X,
   Linkedin,
+  Youtube,
   Mail,
   Video,
   MessageSquare
@@ -399,9 +400,14 @@ export default function Home() {
                   
                   <div className="mt-12">
                     <p className="text-sm text-blue-200 mb-4">Connect with us</p>
-                    <a href="https://www.linkedin.com/company/skilledge-coaching/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-400 transition-colors">
-                      <Linkedin className="h-5 w-5" />
-                    </a>
+                    <div className="flex gap-3">
+                      <a href="https://www.linkedin.com/company/skilledge-coaching/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-400 transition-colors" aria-label="LinkedIn">
+                        <Linkedin className="h-5 w-5" />
+                      </a>
+                      <a href="https://www.youtube.com/@SkillEdgeCoaching" target="_blank" rel="noopener noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-400 transition-colors" aria-label="YouTube">
+                        <Youtube className="h-5 w-5" />
+                      </a>
+                    </div>
                   </div>
                 </div>
                 

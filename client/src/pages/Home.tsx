@@ -14,6 +14,7 @@ import {
   X,
   Linkedin,
   Youtube,
+  Instagram,
   Mail,
   Video,
   MessageSquare
@@ -406,6 +407,9 @@ export default function Home() {
                       </a>
                       <a href="https://www.youtube.com/@SkillEdgeCoaching" target="_blank" rel="noopener noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-400 transition-colors" aria-label="YouTube">
                         <Youtube className="h-5 w-5" />
+                      </a>
+                      <a href="https://www.instagram.com/skilledge_coaching/?hl=en" target="_blank" rel="noopener noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-400 transition-colors" aria-label="Instagram">
+                        <Instagram className="h-5 w-5" />
                       </a>
                     </div>
                   </div>

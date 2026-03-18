@@ -26,6 +26,7 @@ import growth from "@assets/growth.jpg";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showAllTestimonials, setShowAllTestimonials] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -341,11 +342,11 @@ export default function Home() {
         <section id="testimonials" className="py-24 bg-slate-900 text-white">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Success Stories</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
                   quote: "I’m proud to share that I’ve successfully completed the Master Python Course. The course provided a strong foundation in Python, covering everything from basic to advanced concepts, with a focus on hands-on practice, quizzes, assignments, and projects. A heartfelt thank you to SkillEdge Coaching and my trainer, Arivumathi Mam, for their complete guidance and support.",
-                  author: "Balachadru",
+                  author: "Balachandru",
                   role: "BCA final year"
                 },
                 {
@@ -354,29 +355,40 @@ export default function Home() {
                   role: "BCA final year"
                 },
                 {
-                  quote: "First of all thank you so much Akka... Python class was very useful for me and you are teaching is very well and I am zero knowledge about the python but eppo python pathiii basic knowledge erruku this is useful for my career. Akka neega romma dedicated person.then enna doubt kettalum help pannuvigaa. Miss your class akka... Thank you so much..@SkillEdge Coaching ❤️",
-                  author: "Pavithra",
-                  role: "B.Sc., Final year"
-                },
-                {
                   quote: "I'm writing to express my sincere appreciation for the recent machine learning class. It was truly insightful. What stood out the most for me was the hands-on project. Getting to apply the concepts directly to a practical problem was incredibly valuable. Thank you again for your dedication and for making the learning experience so engaging and effective.",
                   author: "Srihari",
                   role: "Working professional"
+                },
+                {
+                  quote: "First of all thank you so much Akka... Python class was very useful for me and you are teaching is very well and I am zero knowledge about the python but eppo python pathiii basic knowledge erruku this is useful for my career. Akka neega romma dedicated person.then enna doubt kettalum help pannuvigaa. Miss your class akka... Thank you so much..@SkillEdge Coaching ❤️",
+                  author: "Pavithra",
+                  role: "B.Sc., Final year"
                 }
-              ].map((testimonial, i) => (
-                <div key={i} className="bg-slate-800 p-8 rounded-2xl">
+              ].slice(0, showAllTestimonials ? 4 : 3).map((testimonial, i) => (
+                <div key={i} className="bg-slate-800 p-8 rounded-2xl flex flex-col h-full">
                   <div className="flex gap-1 text-yellow-400 mb-6">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star key={star} className="h-5 w-5 fill-current" />
                     ))}
                   </div>
-                  <p className="text-lg text-slate-300 mb-8 italic">"{testimonial.quote}"</p>
-                  <div>
+                  <p className="text-[15px] leading-relaxed text-slate-300 mb-8 italic flex-grow">"{testimonial.quote}"</p>
+                  <div className="mt-auto">
                     <p className="font-bold text-white">{testimonial.author}</p>
                     <p className="text-slate-400 text-sm">{testimonial.role}</p>
                   </div>
                 </div>
               ))}
+              {!showAllTestimonials && (
+                <div className="flex items-center justify-center md:col-span-3 mt-8">
+                  <button 
+                    onClick={() => setShowAllTestimonials(true)}
+                    className="flex items-center justify-center w-12 h-12 rounded-full bg-slate-800 text-white hover:bg-slate-700 hover:text-blue-400 transition-all border border-slate-700 shadow-lg group"
+                    aria-label="Show more testimonials"
+                  >
+                    <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </section>

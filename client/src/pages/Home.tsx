@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -25,6 +25,20 @@ import growth from "@assets/growth.jpg";
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    // Handle hash links when returning from other pages
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100); // Small delay to ensure the page is fully rendered
+    }
+  }, []);
 
   const scrollToSection = (id: string) => {
     setIsMobileMenuOpen(false);

@@ -22,8 +22,6 @@ import {
 import heroImage from "@/assets/images/online-tutoring.jpg";
 import logoImage from "@/assets/images/logo.png";
 
-import growth from "@assets/growth.jpg";
-
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showAllTestimonials, setShowAllTestimonials] = useState(false);

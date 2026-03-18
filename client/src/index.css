@@ -32,6 +32,7 @@
   --color-ring: hsl(var(--ring));
   
   --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-serif: "Libre Baskerville", serif;
 }
 
 :root {

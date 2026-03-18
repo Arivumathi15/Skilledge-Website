@@ -198,61 +198,120 @@ export default function Home() {
         </section>
 
         {/* Programs Section */}
-        <section id="programs" className="py-24">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-              <div className="max-w-2xl">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Programs</h2>
-                <p className="text-lg text-slate-600">
-                  Comprehensive courses designed to transform your skills and accelerate your career trajectory.
-                </p>
-              </div>
+        <section id="programs" className="py-24 bg-slate-50/50">
+          <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <div className="mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our courses</h2>
+              <p className="text-lg text-slate-600">
+                Personalised 1-on-1 online training, built around your pace and goals.
+              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Career Accelerator Program",
-                  duration: "12 Weeks",
-                  level: "Intermediate",
-                  description: "A comprehensive coaching program designed to help you land your next big role with confidence.",
-                  features: ["Resume & LinkedIn review", "Weekly 1-on-1 coaching", "Mock interviews", "Salary negotiation tactics"]
-                },
-                {
-                  title: "Skill Mastery Bootcamp",
-                  duration: "8 Weeks",
-                  level: "Beginner to Pro",
-                  description: "Deep dive into high-demand industry skills through practical projects and continuous feedback.",
-                  features: ["Project-based curriculum", "Code/Portfolio reviews", "Community access", "Lifetime resource access"]
-                }
-              ].map((program, i) => (
-                <div key={i} className="group relative rounded-3xl border bg-white p-8 hover:border-primary/50 transition-colors shadow-sm hover:shadow-xl hover:shadow-primary/5">
-                  <div className="flex justify-between items-start mb-6">
-                    <div>
-                      <div className="flex gap-2 mb-3">
-                        <span className="px-3 py-1 rounded-full bg-slate-100 text-xs font-medium text-slate-600">{program.duration}</span>
-                        <span className="px-3 py-1 rounded-full bg-slate-100 text-xs font-medium text-slate-600">{program.level}</span>
-                      </div>
-                      <h3 className="text-2xl font-bold text-slate-900">{program.title}</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Python Course */}
+              <div className="rounded-3xl border border-slate-200 bg-white p-8 hover:border-slate-300 transition-colors shadow-sm flex flex-col h-full">
+                <div className="mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-green-50 flex items-center justify-center mb-6">
+                    <div className="w-6 h-6 text-green-700">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-5.5h4V11h-4v3.5zm2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                      </svg>
                     </div>
                   </div>
-                  <p className="text-slate-600 mb-8 h-12">
-                    {program.description}
+                  <div className="flex gap-2 mb-3 text-xs font-semibold tracking-wider text-green-700 uppercase">
+                    <span>BEGINNER</span>
+                    <span className="text-slate-400">→</span>
+                    <span>ADVANCED</span>
+                  </div>
+                  <h3 className="text-3xl font-serif font-bold text-slate-900 mb-4">Master Python</h3>
+                  <p className="text-slate-600 text-[15px] leading-relaxed">
+                    From syntax basics to OOP, APIs, and Streamlit apps. Build real programs at every step.
                   </p>
-                  <ul className="space-y-3 mb-8">
-                    {program.features.map((feature, j) => (
-                      <li key={j} className="flex items-center gap-3 text-slate-700">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="w-full group-hover:bg-primary" variant="outline">
-                    View Details
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
                 </div>
-              ))}
+                
+                <ul className="space-y-3 mb-10 flex-1">
+                  {[
+                    "Python fundamentals & data structures",
+                    "Functions, OOP & advanced concepts",
+                    "File handling, APIs & Streamlit",
+                    "8 modules + capstone project"
+                  ].map((feature, j) => (
+                    <li key={j} className="flex items-start gap-3 text-[15px] text-slate-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 rounded-full border border-green-200 bg-green-50 text-[13px] font-medium text-green-800">8 modules</span>
+                    <span className="px-3 py-1 rounded-full border border-green-200 bg-green-50 text-[13px] font-medium text-green-800">1-on-1</span>
+                    <span className="px-3 py-1 rounded-full border border-green-200 bg-green-50 text-[13px] font-medium text-green-800">Project-based</span>
+                  </div>
+                  <a href="#" className="text-slate-500 hover:text-slate-900 transition-colors text-sm font-medium flex items-center gap-1 shrink-0">
+                    View course <span className="text-lg leading-none">→</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* ML Course */}
+              <div className="rounded-3xl border border-slate-200 bg-white p-8 hover:border-slate-300 transition-colors shadow-sm flex flex-col h-full relative">
+                <div className="absolute top-8 right-8">
+                  <span className="px-3 py-1 rounded-full border border-green-200 bg-green-50 text-[13px] font-medium text-green-800">
+                    Enrolling now
+                  </span>
+                </div>
+                <div className="mb-6">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6">
+                    <div className="w-6 h-6 text-blue-600">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                        <polyline strokeLinecap="round" strokeLinejoin="round" points="3.27 6.96 12 12.01 20.73 6.96" />
+                        <line x1="12" y1="22.08" x2="12" y2="12" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex gap-2 mb-3 text-xs font-semibold tracking-wider text-blue-700 uppercase">
+                    <span>BEGINNER</span>
+                    <span className="text-slate-400">→</span>
+                    <span>PROFESSIONAL</span>
+                  </div>
+                  <h3 className="text-3xl font-serif font-bold text-slate-900 mb-4">Master Machine Learning</h3>
+                  <p className="text-slate-600 text-[15px] leading-relaxed">
+                    Algorithms, deployment, Docker, FastAPI — you'll leave with a live ML project on GitHub.
+                  </p>
+                </div>
+                
+                <ul className="space-y-3 mb-10 flex-1">
+                  {[
+                    "Core ML algorithms & model evaluation",
+                    "FastAPI, Streamlit & Docker deployment",
+                    "Web scraping & Git for ML projects",
+                    "15 modules + end-to-end capstone"
+                  ].map((feature, j) => (
+                    <li key={j} className="flex items-start gap-3 text-[15px] text-slate-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-3 py-1 rounded-full border border-blue-200 bg-blue-50 text-[13px] font-medium text-blue-800">15 modules</span>
+                    <span className="px-3 py-1 rounded-full border border-blue-200 bg-blue-50 text-[13px] font-medium text-blue-800">1-on-1</span>
+                    <span className="px-3 py-1 rounded-full border border-blue-200 bg-blue-50 text-[13px] font-medium text-blue-800">Deployment-ready</span>
+                  </div>
+                  <a href="#" className="text-slate-500 hover:text-slate-900 transition-colors text-sm font-medium flex items-center gap-1 shrink-0">
+                    View course <span className="text-lg leading-none">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-8 text-[15px] text-slate-500 italic">
+              More courses coming soon — Data Science, Deep Learning & more.
             </div>
           </div>
         </section>

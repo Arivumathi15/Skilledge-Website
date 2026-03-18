@@ -303,7 +303,7 @@ export default function Home() {
                     <span className="px-3 py-1 rounded-full border border-blue-200 bg-blue-50 text-[13px] font-medium text-blue-800">1-on-1</span>
                     <span className="px-3 py-1 rounded-full border border-blue-200 bg-blue-50 text-[13px] font-medium text-blue-800">Deployment-ready</span>
                   </div>
-                  <a href="#" className="text-slate-500 hover:text-slate-900 transition-colors text-sm font-medium flex items-center gap-1 shrink-0">
+                  <a href="/master-ml.html" className="text-slate-500 hover:text-slate-900 transition-colors text-sm font-medium flex items-center gap-1 shrink-0">
                     View course <span className="text-lg leading-none">→</span>
                   </a>
                 </div>

@@ -8,7 +8,7 @@
 <style>
   *{box-sizing:border-box;margin:0;padding:0;}
   :root{
-    --green-50:#EAF3DE;--green-100:#C0DD97;--green-400:#639922;--green-600:#3B6D11;--green-800:#27500A;
+    --green-50:hsl(194, 100%, 95%);--green-100:hsl(194, 100%, 80%);--green-400:hsl(194, 100%, 42%);--green-600:hsl(210, 86%, 30%);--green-800:hsl(210, 86%, 20%);
     --navy:#0F1E35;--navy-light:#1A2F4A;
     --text:#0F1E35;--text-muted:#5A6A7A;--text-light:#8A9AAA;
     --border:#E4EAF0;--bg:#F7F9FC;--white:#FFFFFF;
@@ -53,28 +53,28 @@
   }
   .hero::before{
     content:'';position:absolute;inset:0;
-    background:radial-gradient(ellipse 60% 80% at 80% 50%, rgba(99,153,34,0.12) 0%, transparent 70%);
+    background:radial-gradient(ellipse 60% 80% at 80% 50%, rgba(0, 166, 214, 0.12) 0%, transparent 70%);
     pointer-events:none;
   }
   .hero-inner{max-width:860px;margin:0 auto;position:relative;}
   .hero-badge{
     display:inline-flex;align-items:center;gap:6px;
-    background:rgba(99,153,34,0.15);
-    border:1px solid rgba(99,153,34,0.35);
-    color:#97C459;
+    background:rgba(0, 166, 214, 0.15);
+    border:1px solid rgba(0, 166, 214, 0.35);
+    color:hsl(194, 100%, 42%);
     font-size:12px;font-weight:500;letter-spacing:0.06em;
     padding:5px 12px;border-radius:20px;
     margin-bottom:1.5rem;
   }
-  .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#97C459;animation:pulse 2s infinite;}
+  .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:hsl(194, 100%, 42%);animation:pulse 2s infinite;}
   @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
-  .hero-eyebrow{font-size:13px;color:#97C459;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;}
+  .hero-eyebrow{font-size:13px;color:hsl(194, 100%, 42%);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;}
   .hero h1{
     font-family:'DM Serif Display',serif;
     font-size:clamp(36px,6vw,58px);
     color:#fff;line-height:1.1;margin-bottom:1.25rem;
   }
-  .hero h1 em{color:#97C459;font-style:normal;}
+  .hero h1 em{color:hsl(194, 100%, 42%);font-style:normal;}
   .hero-desc{font-size:17px;color:rgba(255,255,255,0.65);max-width:560px;margin-bottom:2.5rem;line-height:1.7;}
   .hero-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
   .btn-primary{
@@ -124,7 +124,7 @@
     padding:1.5rem;position:relative;overflow:hidden;
     transition:border-color .15s,transform .15s;
   }
-  .why-card:hover{border-color:#97C459;transform:translateY(-2px);}
+  .why-card:hover{border-color:hsl(194, 100%, 42%);transform:translateY(-2px);}
   .why-card::before{
     content:'';position:absolute;top:0;left:0;right:0;height:3px;
     background:linear-gradient(90deg,var(--green-400),var(--green-100));
@@ -198,13 +198,13 @@
   .pricing-box::before{
     content:'';position:absolute;right:-60px;top:-60px;
     width:280px;height:280px;border-radius:50%;
-    background:rgba(99,153,34,0.08);pointer-events:none;
+    background:rgba(0, 166, 214, 0.08);pointer-events:none;
   }
   .pricing-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;}
   .pricing-title{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;margin-bottom:0.75rem;}
   .pricing-includes{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:0;}
   .pricing-includes li{display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.65);}
-  .check{color:#97C459;font-size:14px;flex-shrink:0;}
+  .check{color:hsl(194, 100%, 42%);font-size:14px;flex-shrink:0;}
   .price-block{text-align:center;flex-shrink:0;}
   .price-original{
     font-size:16px;color:rgba(255,255,255,0.35);
@@ -218,8 +218,8 @@
   .price-sub{font-size:12px;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;}
   .price-offer{
     display:inline-block;
-    background:rgba(99,153,34,0.2);border:1px solid rgba(99,153,34,0.4);
-    color:#97C459;font-size:12px;font-weight:500;
+    background:rgba(0, 166, 214, 0.2);border:1px solid rgba(0, 166, 214, 0.4);
+    color:hsl(194, 100%, 42%);font-size:12px;font-weight:500;
     padding:4px 12px;border-radius:20px;margin-bottom:1rem;
   }
 
@@ -258,7 +258,7 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-brand" href="#">Skill<span>Edge</span></a>
+  <a class="nav-brand" href="/"><img src="/src/assets/images/logo.png" alt="SkillEdge Coaching" style="height: 40px; object-fit: contain;" /></a>
   <div class="nav-links">
     <a href="#">Courses</a>
     <a href="#">About</a>
@@ -278,7 +278,7 @@
     <h1>Python, from <em>zero</em><br>to confident.</h1>
     <p class="hero-desc">A structured, 1-on-1 program that takes you from the very basics to building real apps with OOP, APIs, and Streamlit — at your own pace.</p>
     <div class="hero-actions">
-      <a href="#enroll" class="btn-primary">Enroll for ₹14,999 →</a>
+      <a href="#enroll" class="btn-primary">Enroll for ₹6,999 →</a>
       <a href="#curriculum" class="btn-ghost">See full curriculum</a>
     </div>
     <div class="hero-stats">
@@ -311,28 +311,28 @@
     <div class="why-grid">
       <div class="why-card">
         <div class="why-icon">
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#3B6D11" stroke-width="1.5"/><circle cx="9" cy="7" r="4" stroke="#3B6D11" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#97C459" stroke-width="1.5"/></svg>
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="hsl(210, 86%, 30%)" stroke-width="1.5"/><circle cx="9" cy="7" r="4" stroke="hsl(210, 86%, 30%)" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="hsl(194, 100%, 42%)" stroke-width="1.5"/></svg>
         </div>
         <div class="why-title">Fully 1-on-1</div>
         <div class="why-desc">No batches. Every session is scheduled around your time, with your instructor focused entirely on you.</div>
       </div>
       <div class="why-card">
         <div class="why-icon">
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="#3B6D11" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="hsl(210, 86%, 30%)" stroke-width="1.5" stroke-linejoin="round"/></svg>
         </div>
         <div class="why-title">Your pace</div>
         <div class="why-desc">Slow down on tough topics, speed through things you know. The curriculum flexes around your progress.</div>
       </div>
       <div class="why-card">
         <div class="why-icon">
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#3B6D11" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="#97C459" stroke-width="1.5"/></svg>
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke="hsl(210, 86%, 30%)" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="hsl(194, 100%, 42%)" stroke-width="1.5"/></svg>
         </div>
         <div class="why-title">Real projects</div>
         <div class="why-desc">Every module ends with a coding challenge or project. You'll have a portfolio by the time you finish.</div>
       </div>
       <div class="why-card">
         <div class="why-icon">
-          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#3B6D11" stroke-width="1.5"/></svg>
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="hsl(210, 86%, 30%)" stroke-width="1.5"/></svg>
         </div>
         <div class="why-title">Doubt support</div>
         <div class="why-desc">Ask anything, anytime during sessions. No forum waiting. Your questions get answered live, right away.</div>
@@ -513,28 +513,28 @@
     <div class="schedule-grid">
       <div class="schedule-card">
         <div class="schedule-icon">
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#3B6D11" stroke-width="1.5"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#3B6D11" stroke-width="1.5"/></svg>
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" stroke="hsl(210, 86%, 30%)" stroke-width="1.5"/><path d="M16 2v4M8 2v4M3 10h18" stroke="hsl(210, 86%, 30%)" stroke-width="1.5"/></svg>
         </div>
         <div class="schedule-val">Flexible days</div>
         <div class="schedule-key">You choose your schedule</div>
       </div>
       <div class="schedule-card">
         <div class="schedule-icon">
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="#3B6D11" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="#3B6D11" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="hsl(210, 86%, 30%)" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="hsl(210, 86%, 30%)" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
         <div class="schedule-val">60–90 min</div>
         <div class="schedule-key">Per session</div>
       </div>
       <div class="schedule-card">
         <div class="schedule-icon">
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#3B6D11" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="#97C459" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="hsl(210, 86%, 30%)" stroke-width="1.5"/><path d="M9 12l2 2 4-4" stroke="hsl(194, 100%, 42%)" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
         <div class="schedule-val">100% online</div>
         <div class="schedule-key">Live via Google Meet / Zoom</div>
       </div>
       <div class="schedule-card">
         <div class="schedule-icon">
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="#3B6D11" stroke-width="1.5"/></svg>
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="hsl(210, 86%, 30%)" stroke-width="1.5"/></svg>
         </div>
         <div class="schedule-val">Doubt support</div>
         <div class="schedule-key">WhatsApp between sessions</div>
@@ -565,8 +565,8 @@
       </div>
       <div class="price-block">
         <div class="price-original">₹18,000</div>
-        <div class="price-amount">₹14,999</div>
-        <div class="price-sub">one-time or 3 installments of ₹4,999</div>
+        <div class="price-amount">₹6,999</div>
+        <div class="price-sub">one-time or 3 installments of ₹2,333</div>
         <div class="price-offer">Limited offer</div>
         <br/>
         <a href="#enroll" class="btn-primary" style="display:block;text-align:center;">Enroll now →</a>

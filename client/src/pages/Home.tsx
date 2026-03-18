@@ -344,19 +344,19 @@ export default function Home() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  quote: "Skilledge completely transformed my approach to my career. The 1-on-1 coaching was invaluable.",
-                  author: "Sarah J.",
-                  role: "Product Designer"
+                  quote: "I’m proud to share that I’ve successfully completed the Master Python Course. The course provided a strong foundation in Python, covering everything from basic to advanced concepts, with a focus on hands-on practice, quizzes, assignments, and projects. A heartfelt thank you to SkillEdge Coaching and my trainer, Arivumathi Mam, for their complete guidance and support.",
+                  author: "Balachadru",
+                  role: "BCA final year"
                 },
                 {
-                  quote: "The curriculum is perfectly paced and the feedback is incredible. Worth every penny.",
-                  author: "Michael T.",
-                  role: "Software Engineer"
+                  quote: "Python coaching at skill edge academy exceeded my expectations, providing comprehensive guidance and hands-on experience that transformed me from a beginner to a proficient programmer. The expert instructors and structured curriculum made learning Python enjoyable, engaging, and incredibly effective.",
+                  author: "Mohan",
+                  role: "BCA final year"
                 },
                 {
-                  quote: "I landed my dream job just 3 weeks after completing the Career Accelerator program!",
-                  author: "Elena R.",
-                  role: "Marketing Manager"
+                  quote: "First of all thank you so much Akka... Python class was very useful for me and you are teaching is very well and I am zero knowledge about the python but eppo python pathiii basic knowledge erruku this is useful for my career. Akka neega romma dedicated person.then enna doubt kettalum help pannuvigaa. Miss your class akka... Thank you so much..@SkillEdge Coaching ❤️",
+                  author: "Pavithra",
+                  role: "B.Sc., Final year"
                 }
               ].map((testimonial, i) => (
                 <div key={i} className="bg-slate-800 p-8 rounded-2xl">

@@ -153,7 +153,7 @@ export default function Home() {
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-indigo-50 rounded-[2rem] transform rotate-3 -z-10"></div>
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] border bg-white">
                 <img 
-                  src="https://images.unsplash.com/photo-XXXXXXXXX?w=800&q=80" 
+                  src="https://www.2civility.org/wp-content/uploads/2020/11/virtual-mentoring-2.jpg" 
                   alt="Professional coach smiling" 
                   className="w-full h-full object-cover"
                 />

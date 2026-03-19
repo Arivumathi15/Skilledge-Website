@@ -22,8 +22,6 @@ import {
 import heroImage from "@/assets/images/online-tutoring.jpg";
 import logoImage from "@/assets/images/logo.png";
 
-import growth from "@assets/growth.jpg";
-
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showAllTestimonials, setShowAllTestimonials] = useState(false);
@@ -155,7 +153,7 @@ export default function Home() {
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-100 to-indigo-50 rounded-[2rem] transform rotate-3 -z-10"></div>
               <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] border bg-white">
                 <img 
-                  src={growth} 
+                  src={heroImage} 
                   alt="Professional coach smiling" 
                   className="w-full h-full object-cover"
                 />

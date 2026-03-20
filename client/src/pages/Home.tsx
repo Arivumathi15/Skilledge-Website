@@ -210,12 +210,12 @@ export default function Home() {
                   <div key={i} className="grid grid-cols-[1fr_120px_120px] md:grid-cols-[1fr_200px_200px] border-b border-slate-100 last:border-0 p-4 md:p-6 hover:bg-slate-50/50 transition-colors">
                     <div className="text-slate-800 font-medium">{item.feature}</div>
                     <div className="flex justify-center text-[hsl(210,86%,30%)]">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinelinejoin="round">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="20 6 9 17 4 12"></polyline>
                       </svg>
                     </div>
                     <div className="flex justify-center text-slate-300">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <line x1="18" y1="6" x2="6" y2="18"></line>
                         <line x1="6" y1="6" x2="18" y2="18"></line>
                       </svg>
@@ -404,65 +404,41 @@ export default function Home() {
         {/* Contact Section */}
         <section id="contact" className="py-24 relative">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border">
-              <div className="grid md:grid-cols-2">
-                <div className="bg-blue-600 p-10 text-white flex flex-col justify-between">
-                  <div>
-                    <h2 className="text-3xl font-bold mb-4">Ready to start?</h2>
-                    <p className="text-blue-100 mb-8">
-                      Send us a message and we'll get back to you to schedule your free consultation.
-                    </p>
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-4">
-                        <Mail className="h-6 w-6 text-blue-300" />
-                        <span>skilledgecoaching@gmail.com</span>
-                      </div>
-                      <div className="flex items-center gap-4">
-                        <MessageSquare className="h-6 w-6 text-blue-300" />
-                        <span>Usually replies within 24 hours</span>
-                      </div>
-                    </div>
+            <div className="max-w-3xl mx-auto bg-blue-600 rounded-3xl shadow-xl overflow-hidden border border-blue-500">
+              <div className="p-10 md:p-16 text-white text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to start?</h2>
+                <p className="text-blue-100 mb-10 max-w-xl mx-auto text-lg">
+                  Reach out to us today to schedule your free consultation and start your learning journey.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 mb-12">
+                  <div className="flex items-center gap-3">
+                    <Mail className="h-6 w-6 text-blue-300" />
+                    <span className="text-lg">skilledgecoaching@gmail.com</span>
                   </div>
-                  
-                  <div className="mt-12">
-                    <p className="text-sm text-blue-200 mb-4">Connect with us</p>
-                    <div className="flex gap-3">
-                      <a href="https://www.linkedin.com/company/skilledge-coaching/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-400 transition-colors" aria-label="LinkedIn">
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                      <a href="https://www.youtube.com/@SkillEdgeCoaching" target="_blank" rel="noopener noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-400 transition-colors" aria-label="YouTube">
-                        <Youtube className="h-5 w-5" />
-                      </a>
-                      <a href="https://www.instagram.com/skilledge_coaching/?hl=en" target="_blank" rel="noopener noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-400 transition-colors" aria-label="Instagram">
-                        <Instagram className="h-5 w-5" />
-                      </a>
-                    </div>
+                  <div className="flex items-center gap-3">
+                    <MessageSquare className="h-6 w-6 text-blue-300" />
+                    <span className="text-lg">Usually replies within 24 hours</span>
                   </div>
                 </div>
                 
-                <div className="p-10">
-                  <form onSubmit={handleContactSubmit} className="space-y-6">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium text-slate-700">Name</label>
-                      <Input id="name" required placeholder="John Doe" className="bg-slate-50 border-slate-200" />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-slate-700">Email</label>
-                      <Input id="email" type="email" required placeholder="john@example.com" className="bg-slate-50 border-slate-200" />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium text-slate-700">Message</label>
-                      <Textarea 
-                        id="message" 
-                        required 
-                        placeholder="Tell us about your goals..." 
-                        className="min-h-[120px] bg-slate-50 border-slate-200" 
-                      />
-                    </div>
-                    <Button type="submit" className="w-full h-12 text-base rounded-full">
-                      Send Message
-                    </Button>
-                  </form>
+                <div className="pt-10 border-t border-blue-500/50">
+                  <p className="text-sm text-blue-200 mb-6 uppercase tracking-widest font-semibold">Connect with us</p>
+                  <div className="flex justify-center gap-4">
+                    <a href="https://wa.me/918610815391" target="_blank" rel="noopener noreferrer" className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-green-500 hover:bg-green-400 text-white transition-all hover:-translate-y-1 shadow-lg" aria-label="WhatsApp">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.97 2.005c-5.508 0-9.972 4.463-9.972 9.973 0 1.75.454 3.435 1.312 4.939L2 22l5.244-1.309c1.464.793 3.12 1.21 4.819 1.21 5.508 0 9.972-4.463 9.972-9.973 0-5.51-4.464-9.973-9.972-9.973zm0 18.232c-1.464 0-2.894-.383-4.15-1.114l-.297-.174-3.09.771.815-3.003-.191-.303c-.802-1.272-1.226-2.738-1.226-4.257 0-4.542 3.69-8.233 8.23-8.233 4.54 0 8.23 3.691 8.23 8.233 0 4.542-3.69 8.233-8.23 8.233zm4.514-6.177c-.247-.124-1.462-.723-1.69-.806-.226-.083-.393-.124-.558.124-.165.247-.64 .806-.783.97-.144.165-.289.185-.536.062-.247-.124-1.045-.384-1.99-1.229-.735-.658-1.23-1.472-1.374-1.72-.144-.247-.015-.38.108-.504.11-.112.247-.289.371-.433.124-.144.165-.247.247-.412.083-.165.042-.31-.02-.433-.062-.124-.558-1.343-.764-1.838-.2-.482-.404-.417-.558-.424-.144-.007-.31-.008-.475-.008-.165 0-.433.062-.66.31-.227.247-.866.845-.866 2.062 0 1.217.887 2.392 1.01 2.557.124.165 1.745 2.657 4.228 3.727 2.483 1.07 2.483.702 2.937.66.454-.042 1.462-.598 1.668-1.176.206-.578.206-1.07.144-1.176-.062-.107-.226-.165-.473-.289z"/>
+                      </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/skilledge-coaching/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-400 text-white transition-all hover:-translate-y-1 shadow-lg" aria-label="LinkedIn">
+                      <Linkedin className="h-6 w-6" />
+                    </a>
+                    <a href="https://www.youtube.com/@SkillEdgeCoaching" target="_blank" rel="noopener noreferrer" className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-400 text-white transition-all hover:-translate-y-1 shadow-lg" aria-label="YouTube">
+                      <Youtube className="h-6 w-6" />
+                    </a>
+                    <a href="https://www.instagram.com/skilledge_coaching/?hl=en" target="_blank" rel="noopener noreferrer" className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-blue-500 hover:bg-blue-400 text-white transition-all hover:-translate-y-1 shadow-lg" aria-label="Instagram">
+                      <Instagram className="h-6 w-6" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

@@ -33,4 +33,8 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
+  // Force rebuild for Vercel
+  define: {
+    __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
+  },
 });

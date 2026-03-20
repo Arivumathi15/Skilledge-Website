@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: skilledge-api
+    runtime: node
+    buildCommand: "npm run build"
+    startCommand: "npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+    plan: free

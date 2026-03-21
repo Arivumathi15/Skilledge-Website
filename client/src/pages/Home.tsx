@@ -23,6 +23,8 @@ import heroImage from "@/assets/images/online-tutoring.jpg";
 import logoImage from "@/assets/images/logo.png";
 import instructorImage from "@/assets/images/instructor.jpeg";
 
+import WhatsApp_Image_2026_03_21_at_3_35_49_PM from "@assets/WhatsApp Image 2026-03-21 at 3.35.49 PM.jpeg";
+
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showAllTestimonials, setShowAllTestimonials] = useState(false);
@@ -363,7 +365,7 @@ export default function Home() {
               <div>
                 <div className="relative mb-6">
                   <div className="w-full aspect-[4/4.5] rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
-                    <img src={instructorImage} alt="Arivumathi R" className="w-full h-full object-cover object-top" />
+                    <img src={WhatsApp_Image_2026_03_21_at_3_35_49_PM} alt="Arivumathi R" className="w-full h-full object-cover object-top" />
                   </div>
                   <div className="absolute -bottom-4 right-4 bg-slate-900 border-2 border-[hsl(210,86%,30%)] rounded-xl py-2 px-4 text-center">
                     <div className="text-2xl font-serif text-white leading-none mb-1">2+</div>

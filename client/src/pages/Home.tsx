@@ -423,7 +423,7 @@ export default function Home() {
 
               {/* Right Column - Bio */}
               <div>
-                <h3 className="text-3xl font-serif text-slate-900 mb-1">Arivumathi R</h3>
+                <h3 className="text-3xl font-serif text-slate-900 mb-1">Arivumathi M R</h3>
                 <p className="text-[hsl(210,86%,30%)] font-medium mb-8">Data Scientist · Generative AI Specialist · Founder, SkillEdge Coaching</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">

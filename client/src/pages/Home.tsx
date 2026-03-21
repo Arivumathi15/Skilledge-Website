@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import heroImage from "@/assets/images/online-tutoring.jpg";
 import logoImage from "@/assets/images/logo.png";
+import instructorImage from "@/assets/images/instructor.jpeg";
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -362,8 +363,7 @@ export default function Home() {
               <div>
                 <div className="relative mb-6">
                   <div className="w-full aspect-[4/4.5] rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
-                    <div className="text-7xl font-serif text-white/10 select-none">AR</div>
-                    <div className="absolute bottom-5 left-0 right-0 text-center text-sm text-white/40">Arivumathi R</div>
+                    <img src={instructorImage} alt="Arivumathi R" className="w-full h-full object-cover object-top" />
                   </div>
                   <div className="absolute -bottom-4 right-4 bg-slate-900 border-2 border-[hsl(210,86%,30%)] rounded-xl py-2 px-4 text-center">
                     <div className="text-2xl font-serif text-white leading-none mb-1">2+</div>

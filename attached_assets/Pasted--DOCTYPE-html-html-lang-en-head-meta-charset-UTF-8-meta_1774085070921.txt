@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Meet Your Instructor — SkillEdge Coaching</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#0A1628;
+  --navy-mid:#0F1E35;
+  --blue:#1A56A5;
+  --blue-light:#EBF3FB;
+  --blue-mid:#B5D4F4;
+  --blue-400:#378ADD;
+  --green:#1D9E75;
+  --green-light:#E1F5EE;
+  --text:#0A1628;
+  --text-muted:#5A6A7A;
+  --text-light:#8A9AAA;
+  --border:#E2EAF2;
+  --bg:#F5F8FC;
+  --white:#FFFFFF;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
+
+/* ── INSTRUCTOR SECTION ── */
+.instructor-section{
+  background:var(--white);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:5rem 2rem;
+}
+.section-inner{max-width:960px;margin:0 auto;}
+
+.section-label{
+  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--blue);font-weight:500;margin-bottom:0.5rem;
+}
+.section-title{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(28px,4vw,40px);
+  color:var(--text);line-height:1.15;margin-bottom:0.5rem;
+}
+.section-sub{
+  font-size:16px;color:var(--text-muted);
+  max-width:480px;line-height:1.7;margin-bottom:3rem;
+}
+
+/* ── CARD ── */
+.instructor-card{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:3rem;
+  align-items:start;
+}
+@media(max-width:760px){
+  .instructor-card{grid-template-columns:1fr;}
+}
+
+/* Left — photo + quick stats */
+.instructor-left{}
+.photo-wrap{
+  position:relative;
+  margin-bottom:1.5rem;
+}
+.photo-frame{
+  width:100%;
+  aspect-ratio:4/4.5;
+  border-radius:20px;
+  background:linear-gradient(135deg,#1A2F4A 0%,#0F3460 100%);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+  position:relative;
+}
+.photo-initials{
+  font-family:'DM Serif Display',serif;
+  font-size:72px;color:rgba(255,255,255,0.15);
+  user-select:none;
+}
+.photo-placeholder-text{
+  position:absolute;bottom:1.25rem;left:0;right:0;
+  text-align:center;font-size:13px;color:rgba(255,255,255,0.4);
+}
+/* Replace .photo-frame background-image with your actual photo:
+   .photo-frame { background-image: url('YOUR_PHOTO.jpg'); background-size: cover; background-position: center top; }
+   Then remove .photo-initials and .photo-placeholder-text
+*/
+
+.experience-badge{
+  position:absolute;bottom:-16px;right:16px;
+  background:var(--navy);
+  border:2px solid var(--blue);
+  border-radius:12px;
+  padding:10px 16px;
+  text-align:center;
+}
+.exp-num{
+  font-family:'DM Serif Display',serif;
+  font-size:26px;color:var(--white);line-height:1;
+}
+.exp-label{font-size:11px;color:var(--blue-mid);}
+
+.quick-stats{
+  display:flex;flex-direction:column;gap:8px;
+  margin-top:1.5rem;
+}
+.stat-row{
+  display:flex;align-items:center;gap:10px;
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:10px;padding:0.7rem 1rem;
+}
+.stat-icon{
+  width:32px;height:32px;border-radius:8px;
+  background:var(--blue-light);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.stat-text{}
+.stat-val{font-size:13px;font-weight:500;color:var(--text);}
+.stat-key{font-size:11px;color:var(--text-muted);}
+
+/* Right — bio */
+.instructor-right{}
+.instructor-name{
+  font-family:'DM Serif Display',serif;
+  font-size:32px;color:var(--text);margin-bottom:4px;
+}
+.instructor-role{
+  font-size:15px;color:var(--blue);font-weight:500;margin-bottom:1.5rem;
+}
+
+.bio-block{
+  font-size:15px;color:var(--text-muted);
+  line-height:1.8;margin-bottom:1.5rem;
+}
+.bio-block strong{color:var(--text);font-weight:500;}
+
+/* Skills chips */
+.skills-label{
+  font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--text-light);font-weight:500;margin-bottom:0.75rem;
+}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem;}
+.skill-chip{
+  font-size:13px;font-weight:500;
+  padding:6px 14px;border-radius:20px;
+  border:1px solid;
+  transition:transform .12s;
+}
+.skill-chip:hover{transform:translateY(-1px);}
+.chip-py{background:#EAF3DE;color:#27500A;border-color:#97C459;}
+.chip-ml{background:#E6F1FB;color:#0C447C;border-color:#85B7EB;}
+.chip-ds{background:#EDE9FE;color:#4C1D95;border-color:#C4B5FD;}
+.chip-ai{background:#FAEEDA;color:#633806;border-color:#EF9F27;}
+.chip-sql{background:#E1F5EE;color:#085041;border-color:#5DCAA5;}
+
+/* Why I teach */
+.why-box{
+  background:var(--navy);
+  border-radius:14px;padding:1.5rem;
+  margin-bottom:2rem;
+  position:relative;overflow:hidden;
+}
+.why-box::before{
+  content:'';position:absolute;right:-30px;top:-30px;
+  width:140px;height:140px;border-radius:50%;
+  background:rgba(55,138,221,0.07);pointer-events:none;
+}
+.why-quote{
+  font-family:'DM Serif Display',serif;
+  font-size:13px;color:rgba(255,255,255,0.3);
+  margin-bottom:6px;
+}
+.why-text{
+  font-size:14px;color:rgba(255,255,255,0.75);
+  line-height:1.75;font-style:italic;
+}
+.why-sig{
+  margin-top:1rem;
+  font-size:13px;font-weight:500;color:var(--blue-mid);
+}
+
+/* CTA */
+.instructor-cta{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--blue);color:#fff;
+  font-size:14px;font-weight:500;
+  padding:12px 24px;border-radius:10px;
+  text-decoration:none;display:inline-block;
+  transition:background .15s,transform .12s;border:none;cursor:pointer;
+}
+.btn-primary:hover{background:#0C447C;transform:translateY(-1px);}
+.btn-ghost{
+  background:transparent;color:var(--blue);
+  font-size:14px;
+  padding:12px 20px;border-radius:10px;
+  text-decoration:none;display:inline-block;
+  border:1px solid var(--blue-mid);
+  transition:all .15s;cursor:pointer;
+}
+.btn-ghost:hover{background:var(--blue-light);}
+
+/* LinkedIn pill */
+.linkedin-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:20px;padding:5px 14px 5px 8px;
+  text-decoration:none;font-size:13px;color:var(--text-muted);
+  transition:border-color .15s,color .15s;margin-top:0.75rem;
+}
+.linkedin-pill:hover{border-color:var(--blue-mid);color:var(--blue);}
+.li-icon{
+  width:24px;height:24px;border-radius:6px;
+  background:#0A66C2;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* Divider */
+.divider{
+  height:1px;background:var(--border);
+  margin:2.5rem 0;
+}
+
+/* Achievements row */
+.achieve-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  margin-bottom:2rem;
+}
+@media(max-width:480px){.achieve-grid{grid-template-columns:1fr;}}
+.achieve-card{
+  background:var(--bg);border:1px solid var(--border);
+  border-radius:12px;padding:1rem;text-align:center;
+}
+.achieve-val{
+  font-family:'DM Serif Display',serif;
+  font-size:26px;color:var(--blue);margin-bottom:3px;
+}
+.achieve-key{font-size:12px;color:var(--text-muted);}
+
+/* Fade animation */
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<section class="instructor-section">
+  <div class="section-inner">
+
+    <p class="section-label">Your instructor</p>
+    <h2 class="section-title">Learn directly from a<br>practising Data Scientist.</h2>
+    <p class="section-sub">Not a scripted course. Not a recording. Just you and your instructor — every session, live.</p>
+
+    <div class="instructor-card fade-in">
+
+      <!-- LEFT -->
+      <div class="instructor-left">
+        <div class="photo-wrap">
+          <div class="photo-frame">
+            <!--
+              TO ADD YOUR PHOTO:
+              1. Upload your photo to your project
+              2. Replace this div's background with:
+                 style="background-image:url('your-photo.jpg');background-size:cover;background-position:center top;"
+              3. Delete the .photo-initials and .photo-placeholder-text elements below
+            -->
+            <div class="photo-initials">AR</div>
+            <div class="photo-placeholder-text">Add your photo here</div>
+          </div>
+          <div class="experience-badge">
+            <div class="exp-num">2+</div>
+            <div class="exp-label">Years experience</div>
+          </div>
+        </div>
+
+        <div class="quick-stats">
+          <div class="stat-row">
+            <div class="stat-icon">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#185FA5" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="stat-text">
+              <div class="stat-val">Data Scientist · GenAI</div>
+              <div class="stat-key">Current role</div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-icon">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#185FA5" stroke-width="1.5"/><circle cx="9" cy="7" r="4" stroke="#185FA5" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#378ADD" stroke-width="1.5"/></svg>
+            </div>
+            <div class="stat-text">
+              <div class="stat-val">1-on-1 only</div>
+              <div class="stat-key">Teaching format</div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-icon">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#185FA5" stroke-width="1.5"/><polyline points="12 6 12 12 16 14" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div class="stat-text">
+              <div class="stat-val">Flexible schedule</div>
+              <div class="stat-key">Sessions at your pace</div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-icon">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="#185FA5" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke="#185FA5" stroke-width="1.5"/></svg>
+            </div>
+            <div class="stat-text">
+              <div class="stat-val">Online · Tamil Nadu, India</div>
+              <div class="stat-key">Available worldwide</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://www.linkedin.com/in/arivumathimr" target="_blank" class="linkedin-pill">
+          <div class="li-icon">
+            <svg width="14" height="14" fill="#fff" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2" fill="#fff"/></svg>
+          </div>
+          View LinkedIn profile →
+        </a>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="instructor-right">
+        <div class="instructor-name">Arivumathi R</div>
+        <div class="instructor-role">Data Scientist · Generative AI Specialist · Founder, SkillEdge Coaching</div>
+
+        <div class="achieve-grid">
+          <div class="achieve-card">
+            <div class="achieve-val">Python</div>
+            <div class="achieve-key">Primary language</div>
+          </div>
+          <div class="achieve-card">
+            <div class="achieve-val">ML + AI</div>
+            <div class="achieve-key">Core expertise</div>
+          </div>
+          <div class="achieve-card">
+            <div class="achieve-val">1-on-1</div>
+            <div class="achieve-key">Teaching style</div>
+          </div>
+        </div>
+
+        <p class="bio-block">
+          I'm a <strong>Data Scientist specialising in Generative AI</strong>, working hands-on with Python, Machine Learning, SQL, and modern AI tools every day. I started SkillEdge Coaching because I noticed a huge gap — most online courses teach theory but never show you how to <strong>actually build and deploy something real.</strong>
+        </p>
+        <p class="bio-block">
+          In my sessions, I teach exactly what I use in my own work — <strong>FastAPI, Docker, real ML pipelines, and GenAI integrations</strong>. Every session is live and 1-on-1, so we move at your pace, address your doubts instantly, and build things you can actually show to employers.
+        </p>
+
+        <div class="divider"></div>
+
+        <p class="skills-label">Skills you'll learn from me</p>
+        <div class="skills-wrap">
+          <span class="skill-chip chip-py">Python</span>
+          <span class="skill-chip chip-ml">Machine Learning</span>
+          <span class="skill-chip chip-ds">Data Science</span>
+          <span class="skill-chip chip-ai">Generative AI</span>
+          <span class="skill-chip chip-sql">SQL & Databases</span>
+          <span class="skill-chip chip-ml">FastAPI & Deployment</span>
+          <span class="skill-chip chip-ds">Docker</span>
+          <span class="skill-chip chip-py">Streamlit</span>
+        </div>
+
+        <div class="why-box">
+          <div class="why-quote">" Why I teach "</div>
+          <div class="why-text">
+            I've seen too many students finish a course and still struggle to answer: "Have you built anything?" That question inspired SkillEdge. I want every student I teach to leave with a real, deployed project — something they can show in an interview and be genuinely proud of.
+          </div>
+          <div class="why-sig">— Arivumathi R, Founder · SkillEdge Coaching</div>
+        </div>
+
+        <div class="instructor-cta">
+          <a href="#programs" class="btn-primary">Explore my courses →</a>
+          <a href="#contact" class="btn-ghost">Book a free chat</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

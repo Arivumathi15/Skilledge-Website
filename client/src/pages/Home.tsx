@@ -346,6 +346,142 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Instructor Section */}
+        <section id="instructor" className="py-24 bg-white border-y border-slate-200">
+          <div className="container mx-auto px-4 md:px-6 max-w-5xl">
+            <p className="text-sm tracking-widest uppercase text-[hsl(210,86%,30%)] font-medium mb-2">Your instructor</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-slate-900 leading-tight mb-4">
+              Learn directly from a<br className="hidden md:block" />practising Data Scientist.
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mb-12">
+              Not a scripted course. Not a recording. Just you and your instructor — every session, live.
+            </p>
+
+            <div className="grid md:grid-cols-[320px_1fr] gap-12 items-start">
+              {/* Left Column - Photo & Stats */}
+              <div>
+                <div className="relative mb-6">
+                  <div className="w-full aspect-[4/4.5] rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden">
+                    <div className="text-7xl font-serif text-white/10 select-none">AR</div>
+                    <div className="absolute bottom-5 left-0 right-0 text-center text-sm text-white/40">Arivumathi R</div>
+                  </div>
+                  <div className="absolute -bottom-4 right-4 bg-slate-900 border-2 border-[hsl(210,86%,30%)] rounded-xl py-2 px-4 text-center">
+                    <div className="text-2xl font-serif text-white leading-none mb-1">2+</div>
+                    <div className="text-[11px] text-blue-200">Years experience</div>
+                  </div>
+                </div>
+
+                <div className="space-y-2 mt-8">
+                  <div className="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl p-3">
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
+                      <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="hsl(210,86%,30%)" strokeWidth="1.5" strokeLinejoin="round"/></svg>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-slate-900">Data Scientist · GenAI</div>
+                      <div className="text-xs text-slate-500">Current role</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl p-3">
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
+                      <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="hsl(210,86%,30%)" strokeWidth="1.5"/><circle cx="9" cy="7" r="4" stroke="hsl(210,86%,30%)" strokeWidth="1.5"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="hsl(194,100%,42%)" strokeWidth="1.5"/></svg>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-slate-900">1-on-1 only</div>
+                      <div className="text-xs text-slate-500">Teaching format</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl p-3">
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
+                      <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="hsl(210,86%,30%)" strokeWidth="1.5"/><polyline points="12 6 12 12 16 14" stroke="hsl(210,86%,30%)" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-slate-900">Flexible schedule</div>
+                      <div className="text-xs text-slate-500">Sessions at your pace</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 bg-slate-50 border border-slate-200 rounded-xl p-3">
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center shrink-0">
+                      <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="hsl(210,86%,30%)" strokeWidth="1.5"/><circle cx="12" cy="10" r="3" stroke="hsl(210,86%,30%)" strokeWidth="1.5"/></svg>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-slate-900">Online · Tamil Nadu, India</div>
+                      <div className="text-xs text-slate-500">Available worldwide</div>
+                    </div>
+                  </div>
+                </div>
+
+                <a href="https://www.linkedin.com/in/arivumathimr" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-full py-1.5 pr-4 pl-2 text-sm text-slate-600 hover:text-[hsl(210,86%,30%)] hover:border-[hsl(210,86%,30%)] transition-colors mt-4">
+                  <div className="w-6 h-6 rounded bg-[#0A66C2] flex items-center justify-center">
+                    <svg width="12" height="12" fill="#fff" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2" fill="#fff"/></svg>
+                  </div>
+                  View LinkedIn profile →
+                </a>
+              </div>
+
+              {/* Right Column - Bio */}
+              <div>
+                <h3 className="text-3xl font-serif text-slate-900 mb-1">Arivumathi R</h3>
+                <p className="text-[hsl(210,86%,30%)] font-medium mb-8">Data Scientist · Generative AI Specialist · Founder, SkillEdge Coaching</p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+                    <div className="text-2xl font-serif text-[hsl(210,86%,30%)] mb-1">Python</div>
+                    <div className="text-xs text-slate-500">Primary language</div>
+                  </div>
+                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+                    <div className="text-2xl font-serif text-[hsl(210,86%,30%)] mb-1">ML + AI</div>
+                    <div className="text-xs text-slate-500">Core expertise</div>
+                  </div>
+                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">
+                    <div className="text-2xl font-serif text-[hsl(210,86%,30%)] mb-1">1-on-1</div>
+                    <div className="text-xs text-slate-500">Teaching style</div>
+                  </div>
+                </div>
+
+                <div className="space-y-4 text-slate-600 leading-relaxed mb-8">
+                  <p>
+                    I'm a <strong className="text-slate-900 font-medium">Data Scientist specialising in Generative AI</strong>, working hands-on with Python, Machine Learning, SQL, and modern AI tools every day. I started SkillEdge Coaching because I noticed a huge gap — most online courses teach theory but never show you how to <strong className="text-slate-900 font-medium">actually build and deploy something real.</strong>
+                  </p>
+                  <p>
+                    In my sessions, I teach exactly what I use in my own work — <strong className="text-slate-900 font-medium">FastAPI, Docker, real ML pipelines, and GenAI integrations</strong>. Every session is live and 1-on-1, so we move at your pace, address your doubts instantly, and build things you can actually show to employers.
+                  </p>
+                </div>
+
+                <div className="bg-slate-900 rounded-2xl p-6 relative overflow-hidden mb-8">
+                  <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-[hsl(194,100%,42%)]/10 pointer-events-none"></div>
+                  <div className="font-serif text-sm text-white/30 mb-2">Why I teach</div>
+                  <p className="text-white/80 italic leading-relaxed text-sm md:text-base">
+                    "I want to help students build exactly what the industry is looking for today. No fluff, just practical, modern tech stacks."
+                  </p>
+                </div>
+                
+                <div className="pt-8 border-t border-slate-200">
+                  <p className="text-xs tracking-widest uppercase text-slate-500 font-medium mb-3">Core Skills</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-sm font-medium px-4 py-1.5 rounded-full border border-[#97C459] bg-[#EAF3DE] text-[#27500A]">Python</span>
+                    <span className="text-sm font-medium px-4 py-1.5 rounded-full border border-[#85B7EB] bg-[#E6F1FB] text-[#0C447C]">Machine Learning</span>
+                    <span className="text-sm font-medium px-4 py-1.5 rounded-full border border-[#C4B5FD] bg-[#EDE9FE] text-[#4C1D95]">Data Science</span>
+                    <span className="text-sm font-medium px-4 py-1.5 rounded-full border border-[#EF9F27] bg-[#FAEEDA] text-[#633806]">Generative AI</span>
+                    <span className="text-sm font-medium px-4 py-1.5 rounded-full border border-[#5DCAA5] bg-[#E1F5EE] text-[#085041]">SQL & DBs</span>
+                  </div>
+                </div>
+                
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Button onClick={() => scrollToSection('contact')} className="px-6 h-12 rounded-xl text-base">
+                    Book a free consultation
+                  </Button>
+                  <Button variant="outline" onClick={() => scrollToSection('programs')} className="px-6 h-12 rounded-xl text-base border-[hsl(210,86%,30%)]/30 text-[hsl(210,86%,30%)] hover:bg-blue-50">
+                    View courses
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Testimonials */}
         <section id="testimonials" className="py-24 bg-slate-900 text-white">
           <div className="container mx-auto px-4 md:px-6">

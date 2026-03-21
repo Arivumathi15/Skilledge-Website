@@ -468,15 +468,6 @@ export default function Home() {
                     <span className="text-sm font-medium px-4 py-1.5 rounded-full border border-[#5DCAA5] bg-[#E1F5EE] text-[#085041]">SQL & DBs</span>
                   </div>
                 </div>
-                
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <Button onClick={() => scrollToSection('contact')} className="px-6 h-12 rounded-xl text-base">
-                    Book a free consultation
-                  </Button>
-                  <Button variant="outline" onClick={() => scrollToSection('programs')} className="px-6 h-12 rounded-xl text-base border-[hsl(210,86%,30%)]/30 text-[hsl(210,86%,30%)] hover:bg-blue-50">
-                    View courses
-                  </Button>
-                </div>
               </div>
             </div>
           </div>
